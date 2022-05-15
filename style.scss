@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+@import "nulls.scss";
+
+
+//КорБор
+/*$bcolor: rgb(111, 55, 16);
+$bwcolor: rgb(255, 228, 233);
+$bhtbord: 8px solid rgb(111, 55, 16);
+$avabord: 6px solid rgb(111, 55, 16);
+$bord: 4px solid rgb(111, 55, 16);
+$fontcolor: rgb(40, 20, 5);
+$titlecolor: rgb(111, 55, 16);
+$titleback: rgb(205, 143, 99);
+$iconcolor: rgb(111, 55, 16);
+$iconhover: rgb(205, 143, 99);*/
+
+//Дефолт
+$bcolor: #f8a529;
+$bwcolor: #ffebcd;
+$bhtbord: 8px solid #f8a529;
+$avabord: 6px solid #f8a529;
+$bord: 4px solid #f8a529;
+$fontcolor: #412b0b;
+$titlecolor: #412b0b;
+$titleback: #f8ba64dc;
+$iconcolor: #412b0b;
+$iconhover: #f8a529;
+
+//Дефолт2
+/*$bcolor: #d38c21;
+$bwcolor: #ffebcd;
+$bhtbord: 8px solid #d38c21;
+$avabord: 6px solid #d38c21;
+$bord: 4px solid #d38c21;
+$fontcolor:#412b0b;
+$titlecolor: #412b0b;
+//$titleback: #f8a529dc;
+$titleback: #f8ba64dc;
+$iconcolor: #412b0b;
+$iconhover: #d38c21;*/
+
+
+//ДаркБлу2
+/*$bcolor: rgb(47, 79, 79);
+$bwcolor: rgb(112, 128, 144);
+$bhtbord: 8px solid rgb(47, 79, 79);
+$avabord: 6px solid rgb(47, 79, 79);
+$bord: 4px solid rgb(47, 79, 79);
+$fontcolor: white;
+$titlecolor: rgb(47, 79, 79);
+$titleback: rgb(172, 195, 218);
+$iconcolor: rgb(47, 79, 79);
+$iconhover: rgb(172, 195, 218);*/
+
+//ДаркБлу
+/*$bcolor: rgb(47, 79, 79);
+$bwcolor: rgb(66, 108, 109);
+$bhtbord: 8px solid rgb(47, 79, 79);
+$avabord: 6px solid rgb(47, 79, 79);
+$bord: 4px solid rgb(47, 79, 79);
+$fontcolor: white;
+$titlecolor: rgb(47, 79, 79);
+$titleback: rgb(191, 248, 248);
+$iconcolor: rgb(47, 79, 79);
+$iconhover: rgb(191, 248, 248);*/
+
+//Хаки
+/*$bcolor: rgb(66, 73, 28);
+$bwcolor: rgb(89, 97, 46);
+$bhtbord: 8px solid rgb(66, 73, 28);
+$avabord: 6px solid rgb(66, 73, 28);
+$bord: 4px solid rgb(66, 73, 28);
+$fontcolor: rgb(240, 253, 167);
+$titlecolor: rgb(66, 73, 28);
+$titleback: rgb(226, 245, 117);
+$iconcolor: rgb(47, 51, 22);
+$iconhover: rgb(226, 245, 117);*/
+
+$maxWidth: 1400;
+
+
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+   $addSize: $pcSize - $mobSize;
+   $maxWidth: $maxWidth - 320;
+   font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+body {
+   background-color: $bcolor;
+   color: $fontcolor;
+   @include adaptiv-font (22, 15);
+   font-family: 'Exo 2', sans-serif;
+
+   .wrapper {
+      max-width: 85%;
+      background-color: $bwcolor;
+      overflow: hidden;
+      margin: auto;
+      border-radius: 20px;
+
+      .header {
+         padding-top: 10px;
+         margin: 10px 0px 0px 10px;
+         border-radius: 20px;
+
+         &__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            margin-right: 10px;
+         }
+
+         &__text {
+            max-height: 290px;
+            width: 100%;
+            border: $bord;
+            padding: 10px;
+            border-radius: 20px;
+
+         }
+
+         .bor {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+         }
+
+
+
+         &__title {
+            padding-left: 10px;
+            @include adaptiv-font (40, 30);
+            border-left: $bhtbord;
+            border-radius: 10px;
+            width: max-content;
+
+         }
+
+         &__subtitle {
+            @include adaptiv-font (30, 23);
+            padding-left: 10px;
+         }
+
+         &__contacts {
+            margin-left: 7px;
+
+            p {
+               margin-bottom: 7px;
+            }
+         }
+
+         &__img {
+            display: flex;
+            flex: 0 1 28%;
+            justify-content: center;
+            margin: 10px 20px;
+
+            .vkf {
+               display: block;
+               width: 100%;
+               min-width: 230px;
+               border-radius: 50%;
+               border: $avabord;
+            }
+         }
+      }
+
+      h3 {
+         text-align: center;
+         margin-bottom: 30px;
+         @include adaptiv-font (40, 30);
+      }
+
+      .edu {
+         display: flex;
+         align-items: center;
+         border-radius: 20px;
+         margin: 0px 10px 30px 10px;
+         border: $bord;
+         padding: 10px;
+      }
+
+      .edu__img {
+         flex: 0 1 50%;
+         display: flex;
+         justify-content: center;
+      }
+
+      .content {
+
+
+         .content {
+
+            &__upblock>div {
+               float: left;
+
+
+            }
+
+            &__upl {
+
+               max-width: 48.5%;
+               position: relative;
+               left: 0.8%;
+               border: 3px solid black;
+               height: 830px;
+               border: $bord;
+               border-radius: 20px;
+            }
+
+            &__uplimg img {
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+            }
+
+            &__titleupl {}
+
+            &__textupl {
+               padding: 10px;
+            }
+
+            &__upr {
+
+               max-width: 48.5%;
+               height: 830px;
+               border: 3px solid black;
+               position: relative;
+               left: 2.2%;
+               border: $bord;
+               border-radius: 20px;
+
+               margin-bottom: 10px;
+            }
+
+            &__uprimg {
+               height: 250px;
+            }
+
+            &__upr img {
+
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+               width: 300px;
+               position: relative;
+               top: 40px;
+            }
+
+
+
+
+            &__titleupr {}
+
+            &__textupr {
+               padding: 10px;
+            }
+
+            &__downl {
+
+               max-width: 48.5%;
+               position: relative;
+               left: 0.8%;
+               border: 3px solid black;
+               height: 1260px;
+               border: $bord;
+               border-radius: 20px;
+            }
+
+
+            &__downlimg {
+               height: 250px;
+
+               img {
+                  width: 300px;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  position: relative;
+                  top: 86px;
+               }
+            }
+
+            &__titledownl {}
+
+            &__texdownl {
+               padding: 10px;
+            }
+
+            &__downr {
+
+               max-width: 48.5%;
+               position: relative;
+               left: 2.2%;
+               border: 3px solid black;
+               height: 1260px;
+               border: $bord;
+               border-radius: 20px;
+               margin-bottom: 30px;
+            }
+
+            &__downrimg {
+               height: 250px;
+
+               img {
+                  width: 300px;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+
+               }
+            }
+
+            &__titledownr {}
+
+            &__textdownr {
+               padding: 10px;
+            }
+         }
+
+         .tstyle {
+            background: $titleback;
+            height: 60px;
+            text-align: center;
+            @include adaptiv-font (30, 23);
+            padding-top: 15px;
+            padding-bottom: 15px;
+         }
+
+         &__lstitle {
+            margin-bottom: 30px;
+         }
+
+         &__ls {
+            align-items: center;
+            border-radius: 20px;
+            margin: 0px 10px 30px 10px;
+            border: $bord;
+            padding: 10px;
+
+            h2 {
+               text-align: center;
+               margin: 20px 0px 20px 0px;
+
+               @include adaptiv-font (30, 25);
+            }
+
+            ul li {
+               list-style: disc;
+               margin-left: 40px;
+            }
+         }
+      }
+
+      .footer {
+
+
+         &__row {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            //padding: 10px;
+            margin-bottom: 25px;
+
+            .icon {
+               @include adaptiv-font (70, 50);
+               text-decoration: none;
+               color: $iconcolor;
+            }
+
+            a:hover {
+               color: $iconhover;
+               transition: 0.3s;
+            }
+
+            a:active {
+               text-shadow: 0px 0px #412b0b;
+            }
+         }
+
+      }
+
+   }
+}
